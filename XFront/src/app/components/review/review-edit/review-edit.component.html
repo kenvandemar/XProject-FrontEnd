@@ -1,0 +1,41 @@
+<form class="form-input" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input type="text"
+     id="ReviewTitle" 
+     class="form-control" 
+     formControlName="ReviewTitle" 
+     placeholder="Tiêu đề">
+  </div>
+  <div class="form-group">
+
+<input 
+   type="file"
+   (change)="fileChangeEvent($event)" 
+   placeholder="Upload file..." />
+<button type="button" (click)="upload()">Upload</button>
+
+ <input type="hidden"
+     id="Image" 
+     class="form-control" 
+     formControlName="Image" 
+     placeholder="Tiêu đề"
+     value="{{imageName}}" [(ngModel)]="imageName">
+  </div>
+
+           <img 
+            *ngIf="imageName" 
+            [src]="imageName">
+
+  <div class="form-group">
+    <!--<textarea rows="10" cols="80" name="ReviewContent" id="ReviewContent" class="form-control" formControlName="ReviewContent">{{ReviewContent}}</textarea>-->
+    <ckeditor
+    name="ReviewContent" 
+    id="ReviewContent"
+    formControlName="ReviewContent">
+  </ckeditor>
+  </div>
+  <div class="action">
+      <button type="submit">Thêm mới</button>
+      <a class="cancel" (click)="onCancel()">Hủy bỏ</a>
+  </div>
+</form>

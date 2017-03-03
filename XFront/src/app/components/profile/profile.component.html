@@ -1,0 +1,30 @@
+<div class="profile">
+      <img class="thumbnail" src="{{profile.picture}}" alt="{{profile.name}}">
+      <h1><i class="material-icons">email</i> {{profile.name}}</h1>
+      <div class="action">
+        <a class="logout" routerLink="" (click)="_auth.logout()"><i class="material-icons">exit_to_app</i>Đăng xuất</a>
+      </div>
+      <div class="manage-menu" *ngIf="checkRoles">
+        <a routerLink="/quan-ly/sach" ><i class="material-icons">exit_to_app</i>Quản lý sách</a>
+        <a routerLink="/quan-ly/sach/kiem-duyet" ><i class="material-icons">exit_to_app</i>Kiểm duyệt sách</a>
+      </div>
+</div>
+<ul class="book-profile">
+    <h1><i class="material-icons">visibility</i> Sách theo dõi</h1>
+    <!--<li>
+        <a href="#!">Nhà giả kim</a>
+    </li>-->
+    <img src="assets/images/developing.png" style="display: block; max-width: 100%; margin: auto;" alt="đang xây dựng">
+</ul>
+<ul class="book-profile">
+    <h1><i class="material-icons">book</i> Sách đã đăng</h1>
+    <li *ngFor="let story of stories">
+        <a routerLink="/sach/{{story.Slug}}">{{story.StoryName}}</a>
+    </li>
+</ul>
+<ul class="book-profile">
+    <h1><i class="material-icons">create</i> Thảo luận đã đăng</h1>
+    <li *ngFor="let review of reviews">
+        <a routerLink="{{review.Slug}}">{{review.ReviewTitle}}</a>
+    </li>
+</ul> 

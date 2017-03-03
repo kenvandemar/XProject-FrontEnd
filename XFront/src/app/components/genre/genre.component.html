@@ -1,0 +1,24 @@
+<div class="page-name">
+    <h1><i class="large material-icons">view_list</i></h1>
+    <h1>{{genreName}}</h1>
+</div>
+<div class="create-item" *ngIf="_auth.authenticated()">
+  <a class="create-book" routerLink="/sach/them-moi"><i class="large material-icons">note_add</i></a>
+</div>
+
+<div class="results" 
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+    (scrolled)="onScrollDown()">
+        <template ngFor let-story="$implicit" [ngForOf]="stories" let-i="index">
+            <div class="card">
+                <div class="card-thumb">
+                <a routerLink="/sach/{{story.Slug}}"><img class="thumb" src="{{story.Image}}" alt=""></a>
+                </div>
+                <h1><a routerLink="/sach/{{story.Slug}}">{{story.StoryName}}</a></h1>
+                <h2><a routerLink="/tac-gia/{{story.Author.Slug}}">{{story.Author.AuthorName}} </a>| <app-star [score]="story.Score" [rateCount]="story.RateCount"></app-star></h2>
+            </div>      
+        </template>
+</div>
+

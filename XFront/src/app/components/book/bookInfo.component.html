@@ -1,0 +1,41 @@
+<!--
+Author: Linh Ho
+-->
+<div class="book-info" *ngFor="let book of bookInfo">
+    <img [src]="book.Image" alt="{{book.StoryName}}">
+    <h1>{{book.StoryName}}</h1>
+    <div class="info">
+        <div><app-star [score]="book.Score" [rateCount]="book.RateCount"></app-star></div>
+        <div><a routerLink="/tac-gia/{{book.Author.Slug}}">Tác giả: {{book.Author.AuthorName}}</a></div>
+        <div>
+            <span class="bookStatus" *ngIf="book.StoryProgress == 1">Truyện đã hoàn thành</span>
+            <span class="bookStatus" *ngIf="book.StoryProgress == 0">Truyện chưa hoàn thành</span>
+        </div>
+    </div>
+    <!--<div class="download-ebook">
+        <a href="#!">Download Ebook</a>
+        <a href="#!">Download PDF</a>
+    </div>-->
+    <div class="download-ebook"  *ngIf="checkUser()">
+        <button  (click)="deleteBook(book); $event.stopPropagation()">Xoá truyện</button>
+        <button routerLink="/sach/{{book.Slug}}/them-chap" >Thêm Chap</button>
+
+    </div>
+    <div [innerHTML]="book.StoryDescription"></div>
+    <app-facebookComment [router]="sach" [param]="book?.Slug"></app-facebookComment>
+</div>
+<div class="list-chap">
+    <div class="search-form search-chap">
+        <input type="text" placeholder="Tìm kiếm..." [(ngModel)]="chapSearch" (keydown.enter)="search()" (ngModelChange)="checkClearSearch()">
+        <a [routerLink]="" (click)="search()" *ngIf="!searchStatus"><i class="material-icons">search</i></a>
+        <a [routerLink]="" (click)="clearSearch()" *ngIf="searchStatus"><i class="material-icons">clear</i></a>
+    </div>
+    <ul
+        infinite-scroll
+        [infiniteScrollDistance]="scrollDistance"
+        [infiniteScrollThrottle]="throttle"
+        (scrolled)="onScrollDown()">
+        <li *ngFor="let chap of listChap">Chap {{chap.ChapterNumber}} - <a routerLink="{{chap.ChapterNumber}}">{{chap.ChapterTitle}}</a></li>
+    </ul>
+    <img *ngIf="searchNull" src="assets/images/nulldata.png" style="display: block ;max-width: 100%; margin:auto;" alt="Không tìm thấy data">
+</div>

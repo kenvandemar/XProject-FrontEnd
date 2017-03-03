@@ -1,0 +1,66 @@
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <!--THE STORY -->
+  <fieldset>
+    <legend>Thêm truyện</legend>
+    <!--Story Name -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label for="StoryName">Tên Truyện</label>
+          <input type="text" id="StoryName" class="form-control" formControlName="StoryName" [(ngModel)]="storyName">
+        </div>
+      </div>
+    </div>
+    <!--Story Image -->
+    <input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
+    <button type="button" (click)="upload()">Upload</button>
+    <input type="hidden" id="Image" class="form-control" formControlName="Image" placeholder="Tiêu đề" value="{{imageName}}"
+      [(ngModel)]="imageName">
+    <img *ngIf="imageName" [src]="imageName">
+    <!--Story Description -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label for="StoryDescription">Mô tả Truyện </label>
+          <textarea rows="10" cols="80" id="StoryDescription" class="form-control" formControlName="StoryDescription"></textarea>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <!--THE AUTHOR -->
+  <fieldset>
+    <legend>Thêm tác giả</legend>
+    <select formControlName="Author">
+      <option *ngFor="let author of authors" [ngValue]="author">
+        {{author.AuthorName}}
+      </option>
+    </select>
+  </fieldset>
+  <!--THE GENRE -->
+  <!--Genre Name -->
+  <fieldset>
+    <label for="GenreName">Thêm thể loại</label>
+    <select formArrayName="Genres">
+          <option *ngFor="let genre of genres" [ngValue]="genre">
+            {{genre.GenreName}}
+          </option>
+    </select>
+  </fieldset>
+  <div class="action">
+    <button type="submit" class="btn btn-success">Lưu sách và thêm chương</button>
+    <a class="btn btn-danger" (click)="onCancel()">Cancel</a>
+  </div>
+<<<<<<< HEAD
+
+
+    <button type="submit" class="btn btn-success">Lưu sách</button>
+    
+     <a [routerLink]="['.sach/', 123]">Thêm chương</a>
+
+            <!--THE CHAPTER -->
+<!--routerLink="/sach/:id/them-chap"-->
+   </form>
+
+=======
+</form>
+>>>>>>> origin/master

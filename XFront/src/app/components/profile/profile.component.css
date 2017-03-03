@@ -1,0 +1,58 @@
+.profile .thumbnail {
+    width: 100px;
+    border-radius: 50px;
+    display: block;
+    margin: auto;
+}
+.profile h1 {
+    text-align: center;
+    font-size: 1.2rem;
+}
+.profile h1 i {
+    font-size: 1rem;
+}
+
+.profile .action {
+    text-align: center;
+}
+.profile .action * {
+    font-size: 1rem;
+}
+.profile .action a {
+    padding: 5px;
+    border: 2px solid #f44336;
+}
+.profile .action a:hover,.profile .action a:active {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.book-profile {
+    width: 100%;
+    list-style-type: none;
+    margin: 10px 5px;
+    padding: 0px;
+    
+}
+.book-profile h1 {
+    font-size: 25px;
+    
+}
+.book-profile li {
+    height: 42px;
+    margin-top: 12px;
+    margin-right: 10px;
+    border-bottom: solid 1px #757575; 
+}
+.book-profile span {
+    padding: 10px;
+    margin-top: 50px;
+}
+
+@media only screen and (min-width: 950px) {
+    .book-profile {
+    width: 32%;
+    float: left;
+    }
+}
+

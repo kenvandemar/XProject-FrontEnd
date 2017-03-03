@@ -1,0 +1,19 @@
+<template ngFor let-review="$implicit" [ngForOf]="reviews" let-i="index">
+    <div class="review-content">
+        <div class="review-thumb">
+            <a routerLink="{{review?.Slug}}"><img [src]="review.Image" [alt]="review.ReviewTitle"></a>
+        </div>
+        <div *ngIf="checkUser()">
+            <button class="delete" (click)="deleteReview(review); $event.stopPropagation()">Delete</button>
+            <button class="edit" (click)="editReview(); $event.stopPropagation()">Edit</button>
+        </div>
+        <div>
+            <h1 class="title"><a routerLink="{{review?.Slug}}">{{review.ReviewTitle}}</a></h1>
+            <span class="info">{{review?.CreatedDate | date: "dd-MM-yyyy"}}</span>
+            <span [innerHTML]="review?.ReviewContent"></span>
+        </div>
+        <div>
+            <app-facebookComment [router]="thao-luan" [param]="review?.Slug"></app-facebookComment>
+        </div>
+    </div>
+</template> 

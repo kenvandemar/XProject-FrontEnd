@@ -1,0 +1,57 @@
+<!--
+Author: Linh Ho
+-->
+<header>
+    <nav>
+        <div class="tab">
+            <a id="tab-back" routerLink="/sach/{{slug}}">
+                <i class="material-icons">arrow_back</i>
+                <span>QUAY LẠI</span>
+            </a>
+            <a id="tab-large" (click)="largeFont()">
+                <i class="material-icons">text_format</i>
+                <span>FONT LỚN</span>
+            </a>
+            <a id="tab-bold" (click)="boldFont()">
+                <i class="material-icons">format_bold</i>
+                <span>CHỮ ĐẬM</span>
+            </a>
+            <a id="tab-darkUi" (click)="darkUi()">
+                <i class="material-icons">format_color_fill</i>
+                <span>NỀN TỐI</span>
+            </a>
+            <a id="tab-autoUi" (click)="autoUi()">
+                <i class="material-icons">lightbulb_outline</i>
+                <span>TỰ ĐỘNG</span>
+            </a>    
+        </div>
+    </nav>
+</header>
+
+<div class="results"
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+    (scrolled)="onScrollDown()">
+    <div class="chap" *ngFor="let chap of chaps">
+        <h1 *ngFor="let book of bookInfo">{{book.StoryName}}</h1>
+        <h2>Chap {{chap.ChapterNumber}} - {{chap.ChapterTitle}}</h2>
+        <div class="chap-content">
+            <span [innerHTML]="chap.ChapterContent"></span>
+        </div>  
+    </div>
+</div>
+
+<div>
+    <div id="Fcomment">
+        <a class="clearCommentBox" [routerLink]="" (click)="showFcomment()"><i class="large material-icons">clear</i></a>
+        <app-facebookComment [router]="thao-luan" [param]="review?.Slug"></app-facebookComment>
+    </div>
+    <div id="FbgClose" (click)="showFcomment()">
+
+    </div>
+</div>
+
+<div class="create-item">
+  <a class="create-book" [routerLink]="" (click)="showFcomment()"><i class="large material-icons">comment</i></a>
+</div>

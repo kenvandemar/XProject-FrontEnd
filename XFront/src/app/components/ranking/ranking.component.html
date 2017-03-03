@@ -1,0 +1,24 @@
+<div class="page-name">
+    <h1><i class="large material-icons">equalizer</i></h1>
+    <h1>Bảng xếp hạng</h1>
+</div>
+<ul class="ranking-form">
+    <h1><i class="material-icons">book</i> Xếp hạng sách</h1>
+    <li *ngFor="let story of storiesRank; let i = index">
+        <span>{{i+1}} </span><a routerLink="/sach/{{story.Slug}}">{{story.StoryName}}</a>
+    </li>
+</ul>
+<ul class="ranking-form">
+    <h1><i class="material-icons">create</i> Xếp hạng bài review</h1>
+     <li *ngFor="let review of reviewsRank; let i = index">
+        <span>{{i+1}} </span><a routerLink="/thao-luan/{{review.Slug}}">{{review.ReviewTitle}}</a>
+    </li>
+    
+</ul>
+<ul class="ranking-form">
+    <h1><i class="material-icons">people</i> Xếp hạng thành viên</h1>
+    <!--<li>
+        <span>1 </span><a href="#!">Linh Ho</a>
+    </li>-->
+    <img src="assets/images/developing.png" style="display: block; max-width: 100%; margin: auto;" alt="đang xây dựng">
+</ul> 

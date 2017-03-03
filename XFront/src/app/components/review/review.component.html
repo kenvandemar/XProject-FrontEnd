@@ -1,0 +1,34 @@
+<div class="page-name">
+    <h1><i class="large material-icons">create</i></h1>
+    <h1>Thảo luận</h1>
+</div>
+<div class="search-form">
+    <input type="text" placeholder="Tìm kiếm..." [(ngModel)]="reviewSearch" (keydown.enter)="search()" (ngModelChange)="checkClearSearch()">
+    <a (click)="search()" *ngIf="!searchStatus"><i class="material-icons">search</i></a>
+    <a (click)="clearSearch()" *ngIf="searchStatus"><i class="material-icons">clear</i></a>
+</div>
+
+<div class="create-item" *ngIf="_auth.authenticated()">
+  <a class="create-review" [routerLink]="['them-moi']"><i class="large material-icons">create</i></a>
+</div>
+
+<div class="results"
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+    (scrolled)="onScrollDown()">
+    <template ngFor let-review="$implicit" [ngForOf]="reviews">
+        <div class="card-review">
+            <div class="card-thumb">
+                <a routerLink="{{review.Slug}}"><img [src]="review.Image" [alt]="review.ReviewTitle"></a>
+            </div>
+            <div class="card-review-info">
+                <h1><a routerLink="{{review.Slug}}">{{review.ReviewTitle}}</a></h1>
+                <span>
+                    <app-star [score]="review.Score" [rateCount]="review.RateCount"></app-star>
+                </span>
+            </div>
+        </div>
+    </template>
+    <img *ngIf="searchNull" src="assets/images/nulldata.png" style="display: block ;max-width: 100%; margin:auto;" alt="Không tìm thấy data">
+</div>

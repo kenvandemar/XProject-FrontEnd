@@ -1,0 +1,713 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+Author: Linh Ho
+*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab&subset=latin-ext,vietnamese');
+/*
+Color:
+#f5f5f5 grey lighten-4
+#757575 grey darken-1
+#424242 grey darken-3
+#212121 grey darken-4
+#f44336 red
+*/
+* {
+    font-family: 'Roboto Slab', serif;
+}
+html, body {
+    margin: 0px;
+    background-color: #f5f5f5;
+    color: #757575;
+    top: 0xp;
+    bottom: 0px;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #f44336;
+}
+
+
+a:hover, a:active {
+    color: #f00;
+}
+/*
+* navigation
+*/
+nav {
+    position: fixed;
+    z-index: 6969;
+    width: 100%;
+    height: 60px;
+    top: 0px;
+    background-color: #f44336;
+}
+nav * {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+nav .material-icons {
+    font-size: 30px;
+}
+nav .tab{
+    max-width: 700px;
+    height: 60px;
+    margin: auto;
+}
+nav .tab i{
+    font-size: 1.5rem;
+}
+nav .tab span{
+    display: block;
+    font-size: 0.7rem;
+}
+nav a:link, nav a:visited{
+    color: #fff;
+    text-align: center
+}
+nav a:hover,nav a:active {
+    color: #ff0;
+}
+nav .tab-home {
+    width: 20%;
+    float: left;
+    margin-top: 8px;
+}
+nav .tab-ranking {
+    width: 20%;
+    float: left;
+    margin-top: 8px;
+}
+nav .tab-author {
+    width: 20%;
+    float: left;
+    margin-top: 8px;
+}
+nav .tab-menu {
+    color: #fff;
+    text-align: center;
+    width: 20%;
+    float: left;
+    margin-top: 8px;
+}
+nav #tab-back {
+    width: 20%;
+    float: left;
+    margin-top: 8px;
+    color: #fff;
+}
+nav #tab-back {
+    text-align: center;
+}
+nav #tab-large {
+    width: 20%;
+    float: left;
+    margin-top: 8px;
+    color: #fff;
+}
+nav #tab-large {
+    text-align: center;
+}
+nav #tab-bold {
+    width: 20%;
+    float: left;
+    margin-top: 8px;
+    color: #fff;
+}
+nav #tab-bold {
+    text-align: center;
+}
+nav #tab-darkUi {
+    width: 20%;
+    float: left;
+    margin-top: 8px;
+    color: #fff;
+}
+nav #tab-darkUi {
+    text-align: center;
+}
+nav #tab-autoUi {
+    width: 20%;
+    float: left;
+    margin-top: 8px;
+    color: #fff;
+}
+nav #tab-autoUi {
+    text-align: center;
+}
+
+footer {
+    clear: both;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+/*
+* content
+*/
+.wrapper {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 90px;
+}
+
+#web-content {
+    transition: 0.5s;
+}
+
+/*card*/
+
+.card {
+    width: 100%;
+    height: 360px;
+    float: left;
+    margin-bottom: 10px;
+}
+.card-thumb {
+    height: 300px;
+}
+@media only screen and (min-width: 340px) {
+    .card {
+        width: 50%;
+        height: 260px;
+    }
+    .card-thumb {
+    height: 200px;
+}
+}
+@media only screen and (min-width: 550px) {
+    .card {
+        width: 33.3%;
+        height: 260px;
+    }
+    .card-thumb {
+    height: 200px;
+}
+}
+@media only screen and (min-width: 900px) {
+    .card {
+        width: 25%;
+        height: 260px;
+    }
+    .card-thumb {
+    height: 200px;
+}
+}
+@media only screen and (min-width: 1200px) {
+    .card {
+        width: 20%;
+        height: 260px;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .card-thumb {
+    height: 200px;
+}
+}
+.card .thumb {
+    display: block;
+    margin: auto;
+    height: 100%;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(209,209,209,1);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(209,209,209,1);
+    box-shadow: 0px 0px 7px 0px rgba(209,209,209,1);
+}
+.card h1, .card h2 {
+    text-align: center;
+    font-size: 0.8rem;
+    margin: 1px 5px;
+}
+.card h1 a {
+    color: #212121;
+}
+
+/* logo */
+
+.logo {
+    width: 300px;
+    margin: 30px auto;
+}
+.logo img {
+    width: 100%;
+}
+/*Search*/
+.search-form {
+    width: 320px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.search-form input {
+    width: 285px;
+    height: 33px;
+    font-size: 20px;
+    border: 1px solid #f44336;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 30px;
+    color: #424242;
+}
+.search-form input:focus {
+    border: 2px solid #f44336;
+    outline: none;
+}
+.search-form a {
+    position: relative;
+    z-index: 5;
+    top: -33px;
+    left: 285px;
+    color: #f44336;
+    padding: 6px 8px;
+    border-radius: 10px;
+}
+/* Ranking form*/
+
+.ranking-form {
+    width: 100%;
+    list-style-type: none;
+    margin: 10px 5px;
+    padding: 0px;
+    
+}
+.ranking-form h1 {
+    font-size: 25px;
+    
+}
+.ranking-form li {
+    height: 42px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-bottom: solid 1px #757575;
+}
+.ranking-form li a {
+    font-size: 0.9rem;
+}
+.ranking-form span {
+    padding: 10px;
+    margin-top: 50px;
+}
+
+@media only screen and (min-width: 950px) {
+    .ranking-form {
+    width: 32%;
+    float: left;
+    }
+}
+
+/**/
+.page-name {
+    width: 320px;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.page-name i {
+    font-size: 50px
+}
+.page-name h1 {
+    font-size: 20px;
+    margin: 0px;
+}
+
+/* card review*/
+.card-review {
+    width: 100%;
+    height: 350px;
+    display: block;
+    margin-bottom: 30px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(209,209,209,1);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(209,209,209,1);
+    box-shadow: 0px 0px 7px 0px rgba(209,209,209,1);
+}
+@media only screen and (min-width: 700px) {
+    .card-review {
+        width: 45%;
+        float: left;
+        margin-right: 2%;
+        margin-left: 3%;
+        border-radius: 5px;
+    }
+}
+@media only screen and (min-width: 1100px) {
+    .card-review {
+        width: 30%;
+        float: left;
+        margin-right: 1%;
+        margin-left: 2%;
+    }
+}
+.card-review .card-thumb {
+    width: 100%;
+    height: 100%;
+    max-height: 350px;
+}
+.card-review .card-thumb img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+.card-review .card-review-info {
+    position: relative;
+    z-index: 5;
+    padding: 5px;
+    background-color: #fff;
+    height: 80px;
+    top: -90px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.card-review .card-review-info h1 {
+    font-size: 25px;
+    margin: 0px;
+}
+.card-review .card-review-info span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/*Book info*/
+.book-info {
+    line-height: 2;
+}
+.book-info * {
+    max-width: 100%;
+}
+.book-info img {
+    display: block;
+    width: 200px;
+    margin: auto;
+}
+.book-info h1 {
+    text-align: center;
+}
+.book-info .info div {
+    text-align: center;
+}
+.book-info .info .bookStatus {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.book-info .download-ebook {
+    text-align: center;
+}
+
+.book-info .download-ebook a {
+    padding: 5px;
+    border: 2px solid #f44336;
+}
+.book-info .download-ebook a:hover,.book-info .download-ebook a:active {
+    background-color: #f44336;
+    color: #fff;
+}
+.list-chap ul {
+    max-height: 70vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.list-chap ul {
+    list-style-type: none;
+    margin: 10px 5px;
+    padding: 0px;
+}
+.list-chap li {
+    border-bottom: 1px solid #757575;
+    height: 40px;
+    margin: 15px;
+    padding: 0px;
+}
+.list-chap li:hover {
+    border-bottom: 2px solid #f44336;
+    margin: 13px;
+    padding: 0px;
+}
+.search-chap {
+    margin-bottom: 0px;
+}
+
+@media only screen and (min-width: 920px) {
+    .book-info {
+        width: 50%;
+        float: left;
+        height: 70vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-top: 65px;
+    }
+    .list-chap {
+        width: 50%;
+        float: right
+    }
+}
+/* chap*/
+.chap {
+    margin-bottom: 30px;
+    max-width: 960px;
+    margin:auto;
+}
+.chap h1, .chap h2 {
+    text-align: center;
+    margin: 0px;
+}
+.chap h1 {
+    margin-top: 40px;
+}
+.chap .chap-content {
+    border-bottom: 1px solid #f44336;
+    line-height: 2;
+}
+.chap .chap-content * {
+    max-width: 100%;
+}
+@media only screen and (min-width: 1200px) {
+    .chap {
+        width: 1200px;
+        margin: auto;
+    }
+}
+
+/*review content*/
+.review-content .review-thumb img {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+.review-content .title {
+    text-align: center;
+}
+.review-content .info {
+    display: block;
+    text-align: center;
+}
+.review-content * {
+    max-width: 100%;
+}
+@media only screen and (min-width: 1000px) {
+    .review-content {
+        width: 1000px;
+        margin: auto;
+    }
+    .review-content .review-thumb img {
+        display: block;
+        margin: auto;
+        width: 70%;
+    }
+}
+
+/*category*/
+#category-form {
+    position: fixed;
+    z-index: 68;
+    top: 0px;
+    width: 100%;
+    height: 0;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.5s;
+}
+.list-category {
+    max-width: 700px;
+    margin: 90px auto;
+    padding: 10px;
+}
+
+.list-category a {
+    display: block;
+    float:left;
+    padding: 5px 15px;
+    border: 2px solid #f44336;
+    margin: 5px 5px;
+}
+.list-category a:hover,.list-category a:active {
+    background-color: #f44336;
+    color: #fff;
+}
+.hide-menu * {
+    color: #ffea00;
+}
+
+/* Active */
+.menu-active * {
+    color: #ff0;
+}
+.category-active {
+    background-color: #f44336;
+    color: #fff !important;
+}
+
+/*create item trigger*/
+.create-item {
+    position: fixed;
+    z-index: 6900;
+    width: 70px;
+    height: 70px;
+    top: 100vh;
+    left: 100vw;
+}
+.create-review {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #006064;
+    color: #fff;
+    position: relative;
+    margin-top: -90px;
+    margin-left: -70px;
+    text-align: center;
+    border-radius: 25px;
+}
+.create-review i {
+    margin-top: 12px;
+    color: #fff;
+}
+.create-book {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #f44336;
+    color: #fff;
+    position: relative;
+    margin-top: -90px;
+    margin-left: -70px;
+    text-align: center;
+    border-radius: 25px;
+}
+.create-book i {
+    margin-top: 12px;
+    color: #fff;
+}
+
+.star {
+    font-size: 0.5rem;
+    color: #ffd600;
+}
+
+.boldFont * {
+    font-weight: bold;
+}
+.setDarkUi {
+    background-color: #263238;
+    color: #eceff1;
+}
+.setDarkUi * {
+    background-color: #263238;
+}
+.setAutoUi1 {
+    background-color: #ff8f00 ;
+    color: #6d4c41;
+}
+.setAutoUi2 {
+    background-color: #ffb74d;
+    color: #6d4c41;
+}
+.setAutoUi3 {
+    background-color: #fff3e0;
+    color: #6d4c41;
+}
+.selectUi * {
+    color: #ff0;
+}
+
+/* Style of form input*/
+.form-input {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.form-group {
+    margin: 20px 10px;
+}
+input {
+    width: 100%;
+    height: 33px;
+    font-size: 18px;
+    border: 1px solid #f44336;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #424242;
+}
+input:focus {
+    border: 2px solid #f44336;
+    outline: none;
+}
+.form-input img {
+    max-width: 500px;
+    display: block;
+    margin:auto;
+    width: 100%;
+}
+.form-input .action {
+    text-align: center;
+}
+button {
+    padding: 10px 20px;
+    background-color: #f44336;
+    border: none;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin:auto;
+}
+/*table*/
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 960px;
+    margin:auto;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.fbComment{
+    width: 550px;
+    margin:auto;
+    margin-top: 100px;
+}
+/*Show facebook comment in chap*/
+#FbgClose {
+    position: fixed;
+    z-index: 6967;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 0;
+    background-color: #000;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+#Fcomment {
+    position: fixed;
+    z-index: 6968;
+    top:0;
+    left:0;
+    width: 0;
+    max-width: 100%;
+    height: 100vw;
+    background-color: #fff;
+    padding-top: 80px;
+    overflow-y: auto;
+     -webkit-overflow-scrolling: touch;
+     transition: 0.2s;
+}
+#Fcomment .clearCommentBox {
+    display: block;
+    text-align: right;
+    padding: 10px;
+}

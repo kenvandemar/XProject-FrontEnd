@@ -1,0 +1,17 @@
+<form class="form-input" [formGroup]="chapForm" (ngSubmit)="onSubmit()">
+  <h1>Sách: {{StoryName}}</h1>
+  <h2>Thêm mới chap {{chapNumber}}</h2>
+  <!--ADD CHAPTER -->
+  <!-- Chapter Title-->
+  <input type="text" id="ChapterTitle" class="form-control" formControlName="ChapterTitle" placeholder="Tên chap">
+  <input type="hidden" id="StoryId" class="form-control" formControlName="StoryId" [(ngModel)]="storyId">
+  <input type="hidden" id="ChapterNumber" class="form-control" formControlName="ChapterNumber" [(ngModel)]="chapNumber">
+  <!--CHAPTER CONTENT-->
+  <div class="form-group">
+    <ckeditor name="ChapterContent" id="ChapterContent" formControlName="ChapterContent"></ckeditor>
+  </div>
+  <div class="action">
+    <button type="submit" class="btn btn-success">Save</button>
+    <a class="btn btn-danger" (click)="onCancel()">Cancel</a>
+  </div>
+</form>

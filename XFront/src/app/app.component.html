@@ -1,0 +1,53 @@
+<!--
+  Author: Linh Ho
+-->
+<header>
+        <nav>
+           <div class="tab">
+                <a class="tab-home" routerLink="/">
+                    <i class="large material-icons">home</i>
+                    <span>TRANG CHỦ</span>
+                </a>
+                <a class="tab-author" routerLink="/thao-luan"  routerLinkActive="menu-active">
+                    <i class="large material-icons">create</i>
+                    <span>THẢO LUẬN</span>
+                </a>
+                <a class="tab-ranking" routerLink="/bang-xep-hang" routerLinkActive="menu-active">
+                    <i class="large material-icons">equalizer</i>
+                    <span>XẾP HẠNG</span>
+                </a>
+                <a *ngIf="!categoryShow" class="tab-menu" (click)="openMenu()">
+                    <i class="material-icons">view_list</i>
+                    <span>THỂ LOẠI</span>
+                </a>
+                <a *ngIf="categoryShow" class="tab-menu hide-menu" (click)="openMenu()">
+                    <i class="material-icons">clear_all</i>
+                    <span>ẨN MENU</span>
+                </a>
+                <a id="showSidebar" class="tab-menu" (click)="_auth.login()" *ngIf="!_auth.authenticated()">
+                    <i class="material-icons">person_outline</i>
+                    <span>ĐĂNG NHẬP</span>
+                </a>
+                <a id="showSidebar" class="tab-menu" routerLink="/profile" *ngIf="_auth.authenticated()" routerLinkActive="menu-active">
+                    <i class="large material-icons">person</i>
+                    <span>TÀI KHOẢN</span> 
+                </a>
+           </div>
+        </nav>
+    </header>
+
+    <div id="web-content" class="wrapper">
+
+      <router-outlet></router-outlet>
+
+    </div><!-- /.container -->
+    <!--categories-->
+    <div id="category-form">
+      <div class="list-category">
+            <a *ngFor="let category of categoryList" routerLink="/chuyen-muc/{{category.Slug}}"  routerLinkActive="category-active" (click)="openMenu()">{{category.GenreName}}</a>
+        </div>
+    </div>
+    <footer>
+        <div>@2016 | XTeam </div>
+    </footer>
+

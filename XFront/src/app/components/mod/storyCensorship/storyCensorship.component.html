@@ -1,0 +1,25 @@
+<!--
+Author: Linh Ho
+-->
+<div class="page-name">
+    <h1><i class="material-icons">book</i></h1>
+    <h1>Quản lý sách</h1>
+</div>
+<div class="create-item" *ngIf="_auth.authenticated()">
+  <a class="create-book" routerLink="/sach/themsach"><i class="large material-icons">note_add</i></a>
+</div>
+
+<table class="results" 
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+    (scrolled)="onScrollDown()">
+        <tr>
+            <th>Tên sách</th>
+            <th>Hành động</th>
+        </tr>
+        <tr *ngFor="let story of stories">
+            <td><a routerLink="/sach/{{story.Slug}}">{{story.StoryName}}</a></td>
+            <td><a><i class="material-icons">done</i></a>  <a><i class="material-icons">clear</i></a></td>
+        </tr>
+</table>
